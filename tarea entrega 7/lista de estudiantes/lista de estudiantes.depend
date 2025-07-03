@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1751477596 source:c:\clases\programacion\tarea 7\lista de estudiantes\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
