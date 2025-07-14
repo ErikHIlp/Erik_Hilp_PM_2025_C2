@@ -2,8 +2,8 @@
 
 /* Casa de bolsa.
 El programa, al recibir como datos los precios mensuales de las acciones de sus
-cinco fondos de inversión, además del precio de las acciones al 31 de diciembre
-del 2003, genera información estadística importante para la empresa. */
+cinco fondos de inversion, ademas del precio de las acciones al 31 de diciembre
+del 2003, genera informacion estadistica importante para la empresa. */
 
 void LecturaM(float [][12], int, int);
 void LecturaV(float [], int);
@@ -14,8 +14,8 @@ void F3(float [], int);
 void main(void)
 {
     float FON[5][12], PRE[5], REN[5];
-    /* REN es un arreglo unidimensional de tipo real que se utilizará para almacenar
-    el rendimiento anual de los fondos de inversión. */
+    /* REN es un arreglo unidimensional de tipo real que se utilizara para almacenar
+    el rendimiento anual de los fondos de inversion. */
     LecturaM(FON, 5, 12);
     LecturaV(PRE, 5);
     F1(FON, 5, 12, PRE, REN);
@@ -24,7 +24,7 @@ void main(void)
 }
 
 void LecturaM(float A[][12], int F, int C)
-/* Esta función se utiliza para leer un arreglo bidimensional de tipo real de F
+/* Esta funcion se utiliza para leer un arreglo bidimensional de tipo real de F
    filas y C columnas. */
 {
     int I, J;
@@ -37,7 +37,7 @@ void LecturaM(float A[][12], int F, int C)
 }
 
 void LecturaV(float A[], int T)
-/* Esta función se utiliza para leer un arreglo unidimensional de tipo real de T
+/* Esta funcion se utiliza para leer un arreglo unidimensional de tipo real de T
    elementos. */
 {
     int I;
@@ -50,8 +50,8 @@ void LecturaV(float A[], int T)
 }
 
 void F1(float A[][12], int F, int C, float B[], float V[])
-/* La función F1 se utiliza para calcular el rendimiento anual de los fondos de
-   inversión. El resultado se almacena en el arreglo unidimensional V. */
+/* La funcion F1 se utiliza para calcular el rendimiento anual de los fondos de
+   inversion. El resultado se almacena en el arreglo unidimensional V. */
 {
     int I;
     printf("\nRENDIMIENTOS ANUALES DE LOS FONDOS:");
@@ -63,7 +63,7 @@ void F1(float A[][12], int F, int C, float B[], float V[])
 }
 
 void F2(float A[][12], int F, int C)
-/* Esta función calcula el promedio anualizado de las acciones de los diferentes
+/* Esta funcion calcula el promedio anualizado de las acciones de los diferentes
    fondos. */
 {
     int I, J;
@@ -80,7 +80,7 @@ void F2(float A[][12], int F, int C)
 }
 
 void F3(float A[], int F)
-/* Esta función permite calcular los fondos con el mejor y peor rendimiento. */
+/* Esta funcion permite calcular los fondos con el mejor y peor rendimiento. */
 {
     float ME = A[0], PE = A[0];
     int M = 0, P = 0, I;

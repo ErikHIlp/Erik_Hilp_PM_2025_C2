@@ -2,38 +2,38 @@
 #include <string.h>
 
 /* Vendedores.
-El programa maneja información sobre las ventas que realizan los vendedores de
-artículos domésticos de una importante empresa de la Ciudad de México. */
+El programa maneja informacion sobre las ventas que realizan los vendedores de
+articulos domesticos de una importante empresa de la Ciudad de Mexico. */
 
-typedef struct /* Declaración de la estructura banco. */
+typedef struct /* Declaracion de la estructura banco. */
 {
     char noba[10]; /* Nombre del banco. */
-    char nucu[10]; /* Número de cuenta. */
+    char nucu[10]; /* Numero de cuenta. */
 } banco;
 
-typedef union /* Declaración de la union fpago. */
+typedef union /* Declaracion de la union fpago. */
 {
     banco che;    /* Cheque. Campo de tipo estructura banco. */
-    banco nomi;   /* Nómina. Campo de tipo estructura banco. */
+    banco nomi;   /* Nomina. Campo de tipo estructura banco. */
     char venta;   /* Ventanilla. */
 } fpago;
 
-typedef struct /* Declaración de la estructura domicilio. */
+typedef struct /* Declaracion de la estructura domicilio. */
 {
-    char cnu[20]; /* Calle y número. */
+    char cnu[20]; /* Calle y numero. */
     char col[20]; /* Colonia. */
-    char cp[5];   /* Código Postal. */
+    char cp[5];   /* Codigo Postal. */
     char ciu[15]; /* Ciudad. */
 } domicilio;
 
-typedef struct /* Declaración de la estructura vendedor. */
+typedef struct /* Declaracion de la estructura vendedor. */
 {
-    int     num;       /* Número de vendedor. */
+    int     num;       /* Numero de vendedor. */
     char    nom[20];   /* Nombre del vendedor. */
-    float   ven[12];   /* Ventas del año. Arreglo unidimensional de tipo real. */
+    float   ven[12];   /* Ventas del ano. Arreglo unidimensional de tipo real. */
     domicilio domi;    /* domi es de tipo estructura domicilio. */
     float   sal;       /* Salario mensual. */
-    fpago   pago;      /* pago es de tipo unión fpago. */
+    fpago   pago;      /* pago es de tipo union fpago. */
     int     cla;       /* Clave forma de pago. */
 } vendedor;
 
@@ -49,7 +49,7 @@ void main(void)
     int TAM;
     do
     {
-        printf("Ingrese el número de vendedores: ");
+        printf("Ingrese el numero de vendedores: ");
         scanf("%d", &TAM);
     }
     while (TAM > 100 || TAM < 1);
@@ -63,32 +63,32 @@ void main(void)
 }
 
 void Lectura(vendedor A[], int T)
-/* Esta función se utiliza para leer un arreglo unidimensional de tipo
+/* Esta funcion se utiliza para leer un arreglo unidimensional de tipo
    estructura vendedor de T elementos. */
 {
     int I, J;
     for (I = 0; I < T; I++)
     {
         printf("\n\tIngrese datos del vendedor %d", I+1);
-        printf("\nNúmero de vendedor: ");
+        printf("\nNumero de vendedor: ");
         scanf("%d", &A[I].num);
         printf("Nombre del vendedor: ");
         fflush(stdin);
         gets(A[I].nom);
-        printf("Ventas del año:\n");
+        printf("Ventas del ano:\n");
         for (J = 0; J < 12; J++)
         {
             printf("\tMes %d: ", J+1);
             scanf("%f", &A[I].ven[J]);
         }
         printf("Domicilio del vendedor:\n");
-        printf("\tCalle y número: ");
+        printf("\tCalle y numero: ");
         fflush(stdin);
         gets(A[I].domi.cnu);
         printf("\tColonia: ");
         fflush(stdin);
         gets(A[I].domi.col);
-        printf("\tCódigo Postal: ");
+        printf("\tCodigo Postal: ");
         fflush(stdin);
         gets(A[I].domi.cp);
         printf("\tCiudad: ");
@@ -96,7 +96,7 @@ void Lectura(vendedor A[], int T)
         gets(A[I].domi.ciu);
         printf("Salario del vendedor: ");
         scanf("%f", &A[I].sal);
-        printf("Forma de Pago (Banco-1 Nómina-2 Ventanilla-3): ");
+        printf("Forma de Pago (Banco-1 Nomina-2 Ventanilla-3): ");
         scanf("%d", &A[I].cla);
         switch (A[I].cla)
         {
@@ -104,7 +104,7 @@ void Lectura(vendedor A[], int T)
                 printf("\tNombre del banco: ");
                 fflush(stdin);
                 gets(A[I].pago.che.noba);
-                printf("\tNúmero de cuenta: ");
+                printf("\tNumero de cuenta: ");
                 fflush(stdin);
                 gets(A[I].pago.che.nucu);
                 break;
@@ -112,7 +112,7 @@ void Lectura(vendedor A[], int T)
                 printf("\tNombre del banco: ");
                 fflush(stdin);
                 gets(A[I].pago.nomi.noba);
-                printf("\tNúmero de cuenta: ");
+                printf("\tNumero de cuenta: ");
                 fflush(stdin);
                 gets(A[I].pago.nomi.nucu);
                 break;
@@ -153,7 +153,7 @@ void F2(vendedor A[], int T)
         if (SUM > 1500000.00)
         {
             A[I].sal *= 1.05;
-            printf("\nNúmero de vendedor: %d\nVentas: %.2f\nNuevo salario: %.2f",
+            printf("\nNumero de vendedor: %d\nVentas: %.2f\nNuevo salario: %.2f",
                    A[I].num, SUM, A[I].sal);
         }
     }
@@ -171,19 +171,19 @@ void F3(vendedor A[], int T)
         for (J = 0; J < 12; J++)
             SUM += A[I].ven[J];
         if (SUM < 300000.00)
-            printf("\nNúmero de vendedor: %d\nNombre: %s\nVentas: %.2f",
+            printf("\nNumero de vendedor: %d\nNombre: %s\nVentas: %.2f",
                    A[I].num, A[I].nom, SUM);
     }
 }
 
 void F4(vendedor A[], int T)
-/* Número de vendedor, banco y cuenta de quienes cobran por cheque. */
+/* Numero de vendedor, banco y cuenta de quienes cobran por cheque. */
 {
     int I;
     printf("\n\t\tVendedores con Cuenta en el Banco");
     for (I = 0; I < T; I++)
         if (A[I].cla == 1)
-            printf("\nNúmero de vendedor: %d\nBanco: %s\nCuenta: %s",
+            printf("\nNumero de vendedor: %d\nBanco: %s\nCuenta: %s",
                    A[I].num,
                    A[I].pago.che.noba, A[I].pago.che.nucu);
 }

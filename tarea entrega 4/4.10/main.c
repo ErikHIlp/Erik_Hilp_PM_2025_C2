@@ -1,28 +1,28 @@
 #include <stdio.h>
 
-/* Múltiplo.
-El programa, al recibir como datos dos números enteros, determina si
-el segundo es múltiplo del primero. */
+/* Multiplo.
+El programa, al recibir como datos dos numeros enteros, determina si
+el segundo es multiplo del primero. */
 
-int multiplo(int, int);       /* Prototipo de función. */
+int multiplo(int, int);       /* Prototipo de funcion. */
 
 int main(void)
 {
     int NU1, NU2, RES;
-    printf("\nIngresa los dos números: ");
+    printf("\nIngresa los dos numeros: ");
     scanf("%d %d", &NU1, &NU2);
     RES = multiplo(NU1, NU2);
 
     if (RES)
-        printf("\nEl segundo número es múltiplo del primero");
+        printf("\nEl segundo numero es multiplo del primero");
     else
-        printf("\nEl segundo número no es múltiplo del primero");
+        printf("\nEl segundo numero no es multiplo del primero");
 
     return 0;
 }
 
 int multiplo(int N1, int N2)
-/* Esta función determina si N2 es múltiplo de N1. */
+/* Esta funcion determina si N2 es multiplo de N1. */
 {
     int RES;
     if ((N2 % N1) == 0)

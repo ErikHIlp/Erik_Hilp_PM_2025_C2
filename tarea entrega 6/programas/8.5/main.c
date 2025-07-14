@@ -1,37 +1,37 @@
 #include <stdio.h>
 #include <string.h>
 /* Uniones.
-El programa muestra la manera como se declara una unión, así como la forma de
-acceso a los campos de las variables de tipo unión tanto para asignación
+El programa muestra la manera como se declara una union, asi como la forma de
+acceso a los campos de las variables de tipo union tanto para asignacion
 de valores como para lectura y escritura. */
-union datos /* Declaración de una unión. */
+union datos /* Declaracion de una union. */
 {
     char celular[15];
     char correo[20];
 };
-typedef struct /* Declaración de una estructura utilizando typedef. */
+typedef struct /* Declaracion de una estructura utilizando typedef. */
 {
     int matricula;
     char nombre[20];
     char carrera[20];
     float promedio;
     union datos personales;
-    /* Observa que uno de los campos de la estructura alumno es una unión. */
+    /* Observa que uno de los campos de la estructura alumno es una union. */
 } alumno;
-void Lectura(alumno *); /* Prototipo de función. */
+void Lectura(alumno *); /* Prototipo de funcion. */
 
 void main(void)
 {
-    alumno a1 = {120, "María", "Contabilidad", 8.9, "5-158-40-50"}, a2, a3;
-    /* Observa que sólo el primer componente de una unión puede recibir valores por
+    alumno a1 = {120, "Maria", "Contabilidad", 8.9, "5-158-40-50"}, a2, a3;
+    /* Observa que solo el primer componente de una union puede recibir valores por
     medio de este tipo de asignaciones. */
     /* Para que puedas observar las diferentes formas en que los campos de las
     variables de tipo estructura alumno reciben valores, ingresamos los valores
     de los campos de tres formas diferentes. Los campos de a1 reciben valores
     directamente, los campos de a2 se leen en el programa principal, y los campos
-    de a3 reciben valores a través de una función. */
+    de a3 reciben valores a traves de una funcion. */
     printf("Alumno 2\n");
-    printf("Ingrese la matrícula: ");
+    printf("Ingrese la matricula: ");
     scanf("%d", &a2.matricula);
     fflush(stdin);
     printf("Ingrese el nombre: ");
@@ -42,27 +42,27 @@ void main(void)
     printf("Ingrese el promedio: ");
     scanf("%f", &a2.promedio);
     fflush(stdin);
-    printf("Ingrese el correo electrónico: ");
+    printf("Ingrese el correo electronico: ");
     gets(a2.personales.correo);
     /* Observa que en la variable a2 de tipo estructura alumno el segundo campo de la
-    unión recibe un valor. */
+    union recibe un valor. */
     printf("Alumno 3\n");
-    Lectura(&a3); /* Se llama a una función para leer los campos de la variable a3. */
+    Lectura(&a3); /* Se llama a una funcion para leer los campos de la variable a3. */
 
-    /* Impresión de resultados. */
+    /* Impresion de resultados. */
     printf("\nDatos del alumno 1\n");
     printf("%d\n", a1.matricula);
     puts(a1.nombre);
     puts(a1.carrera);
     printf("%.2f\n", a1.promedio);
     puts(a1.personales.celular);
-    /* Observa que escribe el valor del teléfono celular asignado. */
+    /* Observa que escribe el valor del telefono celular asignado. */
     puts(a1.personales.correo);
     /* Observa que si tratamos de imprimir el campo correo, escribe basura. */
     strcpy(a1.personales.correo, "hgimenez@hotmail.com");
-    /* Se ingresa ahora un valor al segundo campo de la unión de la variable a1. */
+    /* Se ingresa ahora un valor al segundo campo de la union de la variable a1. */
     puts(a1.personales.celular);
-    /* Ahora escribe basura en el campo del teléfono celular. */
+    /* Ahora escribe basura en el campo del telefono celular. */
     puts(a1.personales.correo);
     /* Escribe el contenido del campo (hgimenez@hotmail.com). */
 
@@ -73,10 +73,10 @@ void main(void)
     printf("%.2f\n", a2.promedio);
     puts(a2.personales.celular); /* Escribe basura. */
     puts(a2.personales.correo);  /* Escribe el contenido del segundo campo. */
-    printf("Ingrese el teléfono celular del alumno 2: ");
+    printf("Ingrese el telefono celular del alumno 2: ");
     fflush(stdin);
     gets(a2.personales.celular);
-    puts(a2.personales.celular); /* Escribe el teléfono celular ingresado. */
+    puts(a2.personales.celular); /* Escribe el telefono celular ingresado. */
     puts(a2.personales.correo);   /* Ahora escribe basura. */
 
     printf("\nDatos del alumno 3\n");
@@ -89,10 +89,10 @@ void main(void)
 }
 
 void Lectura(alumno *a)
-/* La función Lectura se utiliza para leer los campos de una variable de tipo
+/* La funcion Lectura se utiliza para leer los campos de una variable de tipo
 estructura alumno. */
 {
-    printf("\nIngrese la matrícula: ");
+    printf("\nIngrese la matricula: ");
     scanf("%d", &(*a).matricula);
     fflush(stdin);
     printf("Ingrese el nombre: ");
@@ -102,7 +102,7 @@ estructura alumno. */
     gets((*a).carrera);
     printf("Ingrese el promedio: ");
     scanf("%f", &a->promedio);
-    printf("Ingrese el teléfono celular: ");
+    printf("Ingrese el telefono celular: ");
     fflush(stdin);
     gets(a->personales.celular);
 }

@@ -4,7 +4,7 @@
 El programa, al recibir como dato una serie de calificaciones,
 obtiene el rango en que se encuentran. */
 
-void Rango(float);    /* Prototipo de función. */
+void Rango(float);    /* Prototipo de funcion. */
 
 int RA1 = 0;
 int RA2 = 0;
@@ -12,18 +12,18 @@ int RA3 = 0;          /* Variables globales de tipo entero. */
 int RA4 = 0;
 int RA5 = 0;
 /* El uso de variables globales no es muy recomendable. En estos
-   problemas se utilizan únicamente con el objetivo de que el lector
+   problemas se utilizan unicamente con el objetivo de que el lector
    pueda observar la forma en que se aplican. */
 
 int main(void)
 {
     float CAL;
-    printf("Ingresa la primera calificación del alumno: ");
+    printf("Ingresa la primera calificacion del alumno: ");
     scanf("%f", &CAL);
     while (CAL != -1)
     {
-        Rango(CAL);    /* Llamada a la función Rango. Se pasa un parámetro por valor. */
-        printf("Ingresa la siguiente calificación del alumno: ");
+        Rango(CAL);    /* Llamada a la funcion Rango. Se pasa un parametro por valor. */
+        printf("Ingresa la siguiente calificacion del alumno: ");
         scanf("%f", &CAL);
     }
     printf("\n0..3.99 = %d", RA1);
@@ -35,8 +35,8 @@ int main(void)
 }
 
 void Rango(float VAL)
-/* La función incrementa una variable dependiendo del valor del
-   parámetro VAL. */
+/* La funcion incrementa una variable dependiendo del valor del
+   parametro VAL. */
 {
     if (VAL < 4)
         RA1++;

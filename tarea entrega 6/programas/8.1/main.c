@@ -2,24 +2,24 @@
 #include <string.h>
 
 /* Estructuras-1.
-El programa muestra la manera en que se declara una estructura, así como la
+El programa muestra la manera en que se declara una estructura, asi como la
 forma en que se tiene acceso a los campos de las variables de tipo estructura
-tanto para asignación de valores como para lectura y escritura. */
+tanto para asignacion de valores como para lectura y escritura. */
 
-struct alumno           /* Declaración de la estructura. */
+struct alumno           /* Declaracion de la estructura. */
 {
     int matricula;
     char nombre[20],
          carrera[20];   /* Campos de la estructura. */
     float promedio;
     char direccion[20];
-};                       /* Observa que la declaración de una estructura termina con punto y coma. */
+};                       /* Observa que la declaracion de una estructura termina con punto y coma. */
 
 void main(void)
 {
     /* Observa que las variables de tipo estructura se declaran como cualquier otra
        variable. a1, a2 y a3 son variables de tipo estructura alumno. */
-    struct alumno a1 = {120, "María", "Contabilidad", 8.9, "Querétaro"}, a2, a3;
+    struct alumno a1 = {120, "Maria", "Contabilidad", 8.9, "Queretaro"}, a2, a3;
     /* Los campos de a1 reciben valores directamente. */
 
     char nom[20], car[20], dir[20];
@@ -27,7 +27,7 @@ void main(void)
     float pro;
 
     /* Los campos de a2 reciben valores por medio de una lectura. */
-    printf("\n\nIngrese la matrícula del alumno 2: ");
+    printf("\n\nIngrese la matricula del alumno 2: ");
     scanf("%d", &a2.matricula);
     fflush(stdin);
     printf("Ingrese el nombre del alumno 2: ");
@@ -37,11 +37,11 @@ void main(void)
     printf("Ingrese el promedio del alumno 2: ");
     scanf("%f", &a2.promedio);
     fflush(stdin);
-    printf("Ingrese la dirección del alumno 2: ");
+    printf("Ingrese la direccion del alumno 2: ");
     gets(a2.direccion);
 
     /* Los campos de a3 reciben valores por medio de asignaciones. */
-    printf("\nIngrese la matrícula del alumno 3: ");
+    printf("\nIngrese la matricula del alumno 3: ");
     scanf("%d", &mat);
     a3.matricula = mat;
     fflush(stdin);
@@ -55,7 +55,7 @@ void main(void)
     scanf("%f", &pro);
     a3.promedio = pro;
     fflush(stdin);
-    printf("Ingrese la dirección del alumno 3: ");
+    printf("Ingrese la direccion del alumno 3: ");
     gets(dir);
     strcpy(a3.direccion, dir);
 

@@ -1,47 +1,47 @@
 #include <stdio.h>
 
-/* Búsqueda binaria. */
+/* Busqueda binaria. */
 
-const int MAX=100;
+const int MAX = 100;
 
 void Lectura(int [], int);        /* Prototipos de funciones. */
-int  Binaria(int *, int, int);
+int Binaria(int *, int, int);
 
 int main(void)
 {
     int RES, ELE, TAM, VEC[MAX];
     do
     {
-        printf("Ingrese el tamaño del arreglo: ");
+        printf("Ingrese el tamano del arreglo: ");
         scanf("%d", &TAM);
     }
-    while (TAM>MAX || TAM<1);   /* Se verifica que el tamaño del arreglo sea correcto. */
+    while (TAM > MAX || TAM < 1);   /* Se verifica que el tamano del arreglo sea correcto. */
     Lectura(VEC, TAM);
     printf("\nIngrese el elemento a buscar: ");
     scanf("%d", &ELE);
-    RES = Binaria(VEC, TAM, ELE);   /* Se llama a la función que busca en el arreglo. */
-    if (RES)                        /* Si RES tiene un valor verdadero —diferente de 0—, se escribe la posición en la que se encontró el elemento. */
-        printf("\nEl elemento se encuentra en la posición: %d", RES);
+    RES = Binaria(VEC, TAM, ELE);   /* Se llama a la funcion que busca en el arreglo. */
+    if (RES)                        /* Si RES tiene un valor verdadero -diferente de 0-, se escribe la posicion en la que se encontro el elemento. */
+        printf("\nEl elemento se encuentra en la posicion: %d", RES);
     else
         printf("\nEl elemento no se encuentra en el arreglo");
     return 0;
 }
 
 void Lectura(int A[], int T)
-/* La función Lectura se utiliza para leer un arreglo unidimensional de T elementos de tipo entero. */
+/* La funcion Lectura se utiliza para leer un arreglo unidimensional de T elementos de tipo entero. */
 {
     int I;
-    for (I=0; I<T; I++)
+    for (I = 0; I < T; I++)
     {
-        printf("Ingrese el elemento %d: ", I+1);
+        printf("Ingrese el elemento %d: ", I + 1);
         scanf("%d", &A[I]);
     }
 }
 
 int Binaria(int A[], int T, int E)
-/* Esta función se utiliza para realizar una búsqueda binaria del
+/* Esta funcion se utiliza para realizar una busqueda binaria del
    elemento E en el arreglo unidimensional A de T elementos. Si se
-   encuentra el elemento, la función regresa la posición correspondiente.
+   encuentra el elemento, la funcion regresa la posicion correspondiente.
    En caso contrario, regresa 0. */
 {
     int IZQ = 0, CEN, DER = T - 1, BAN = 0;
@@ -49,7 +49,7 @@ int Binaria(int A[], int T, int E)
     {
         CEN = (IZQ + DER) / 2;
         if (E == A[CEN])
-            BAN = CEN + 1;    /* Se asigna CEN+1 para devolver posición 1-based */
+            BAN = CEN + 1;    /* Se asigna CEN+1 para devolver posicion 1-based */
         else if (E > A[CEN])
             IZQ = CEN + 1;
         else

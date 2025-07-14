@@ -3,10 +3,10 @@
 #include <string.h>
 /* Reemplaza palabras.
 El programa lee cadenas de caracteres de un archivo y cada que vez que
-➥encuentra la palabra México escrita en forma incorrecta —la primera con
-➥minúscula— la reemplaza por su forma correcta y escribe la cadena en otro
-➥archivo. */
-void cambia(FILE *, FILE *); /* Prototipo de función. Se pasan dos archivos como parámetros. */
+encuentra la palabra Mexico escrita en forma incorrecta la primera con
+minuscula la reemplaza por su forma correcta y escribe la cadena en otro
+archivo. */
+void cambia(FILE *, FILE *); /* Prototipo de funcion. Se pasan dos archivos como parametros. */
 
 void main(void)
 {
@@ -26,9 +26,9 @@ void main(void)
 
 void cambia(FILE *ap1, FILE *ap2)
 {
-    /* Esta función reemplaza en la cadena de caracteres la palabra méxico escrita
-    ➥con minúsculas —la primera letra— por su forma correcta y escribe la cadena
-    ➥de caracteres en un nuevo archivo. */
+    /* Esta funcion reemplaza en la cadena de caracteres la palabra mexico escrita
+    con minusculas la primera letra por su forma correcta y escribe la cadena
+    de caracteres en un nuevo archivo. */
     int i, j, k;
     char cad[30], cad1[30], aux[30], *cad2;
 
@@ -36,10 +36,10 @@ void cambia(FILE *ap1, FILE *ap2)
     {
         fgets(cad, 30, ap1);
         strcpy(cad1, cad);
-        cad2 = strstr(cad1, "méxico"); /* Localiza la subcadena méxico en cad1. */
+        cad2 = strstr(cad1, "mexico"); /* Localiza la subcadena mexico en cad1. */
         while (cad2 != NULL)
         {
-            cad2[0] = 'M'; /* Reemplaza la letra minúscula por la mayúscula. */
+            cad2[0] = 'M'; /* Reemplaza la letra minuscula por la mayuscula. */
             i = strlen(cad1);
             j = strlen(cad2);
             k = i - j; /* Diferencia de longitudes de cad1 y cad2. */
@@ -52,7 +52,7 @@ void cambia(FILE *ap1, FILE *ap2)
             }
             else
                 strcpy(cad1, cad2);
-            cad2 = strstr(cad1, "méxico");
+            cad2 = strstr(cad1, "mexico");
         }
         fputs(cad1, ap2); /* Se escribe la cadena correcta en el archivo ap2. */
     }

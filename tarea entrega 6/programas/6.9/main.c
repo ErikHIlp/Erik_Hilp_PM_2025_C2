@@ -2,7 +2,7 @@
 
 /* Asigna.
 El programa, al recibir un arreglo bidimensional cuadrado, asigna elementos en
-función del módulo (residuo) a un arreglo unidimensional. */
+funcion del modulo (residuo) a un arreglo unidimensional. */
 
 void Lectura(int [][10], int);
 void Calcula(int [][10], float [], int);
@@ -17,7 +17,7 @@ void main(void)
     float VEC[10];
     do
     {
-        printf("Ingrese el tamaño de la matriz: ");
+        printf("Ingrese el tamano de la matriz: ");
         scanf("%d", &TAM);
     }
     while (TAM >10 || TAM < 1);
@@ -27,7 +27,7 @@ void main(void)
 }
 
 void Lectura(int A[][10], int N)
-/* La función Lectura se utiliza para leer un arreglo bidimensional cuadrado
+/* La funcion Lectura se utiliza para leer un arreglo bidimensional cuadrado
 de tipo entero. */
 {
     int I, J;
@@ -40,7 +40,7 @@ de tipo entero. */
 }
 
 void Calcula(int A[][10], float B[], int N)
-/* Esta función se utiliza tanto para calcular el módulo entre el índice del
+/* Esta funcion se utiliza tanto para calcular el modulo entre el indice del
 arreglo unidimensional y 3, como para llamar a las funciones
 correspondientes para resolver el problema. */
 {
@@ -58,7 +58,7 @@ correspondientes para resolver el problema. */
 }
 
 float Mod0(int A[][10], int K, int M)
-/* Esta función calcula el cociente entre una productoria y una sumatoria. */
+/* Esta funcion calcula el cociente entre una productoria y una sumatoria. */
 {
     int I;
     float PRO = 1.0, SUM = 0.0;
@@ -71,7 +71,7 @@ float Mod0(int A[][10], int K, int M)
 }
 
 float Mod1(int A[][10], int N)
-/* Esta función obtiene el resultado de una sumatoria. */
+/* Esta funcion obtiene el resultado de una sumatoria. */
 {
     int I;
     float SUM = 0.0;
@@ -81,7 +81,7 @@ float Mod1(int A[][10], int N)
 }
 
 float Mod2(int A[][10], int N, int M)
-/* Esta función obtiene el resultado de la productoria. */
+/* Esta funcion obtiene el resultado de la productoria. */
 {
     int I;
     float PRO = 1.0;
@@ -91,7 +91,7 @@ float Mod2(int A[][10], int N, int M)
 }
 
 void Imprime(float B[], int N)
-/* Esta función se utiliza para escribir un arreglo unidimensional de tipo
+/* Esta funcion se utiliza para escribir un arreglo unidimensional de tipo
 real de N elementos. */
 {
     int I;

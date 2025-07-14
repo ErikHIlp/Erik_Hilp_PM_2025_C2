@@ -2,7 +2,7 @@
 
 /* Suma matrices.
 El programa, al recibir como datos dos arreglos bidimensionales del mismo
-tamaño, calcula la suma de ambos y la almacena en un tercer arreglo
+tamano, calcula la suma de ambos y la almacena en un tercer arreglo
 bidimensional. */
 
 const int MAX = 50;
@@ -15,22 +15,22 @@ void Imprime(int [][MAX], int, int);
 void main(void)
 {
     int MA[MAX][MAX], MB[MAX][MAX], MC[MAX][MAX];
-    /* Declaración de los tres arreglos */
+    /* Declaracion de los tres arreglos */
     int FIL, COL;
     do
     {
-        printf("Ingrese el número de filas de los arreglos: ");
+        printf("Ingrese el numero de filas de los arreglos: ");
         scanf("%d", &FIL);
     }
     while (FIL > MAX || FIL < 1);
-    /* Se verifica que el número de filas sea correcto. */
+    /* Se verifica que el numero de filas sea correcto. */
     do
     {
-        printf("Ingrese el número de columnas de los arreglos: ");
+        printf("Ingrese el numero de columnas de los arreglos: ");
         scanf("%d", &COL);
     }
     while (COL > MAX || COL < 1);
-    /* Se verifica que el número de columnas sea correcto. */
+    /* Se verifica que el numero de columnas sea correcto. */
 
     printf("\nLectura del Arreglo MA\n");
     Lectura(MA, FIL, COL);
@@ -40,12 +40,12 @@ void main(void)
 
     Suma(MA, MB, MC, FIL, COL);
 
-    printf("\nImpresión del Arreglo MC\n");
+    printf("\nImpresion del Arreglo MC\n");
     Imprime(MC, FIL, COL);
 }
 
 void Lectura(int A[][MAX], int F, int C)
-/* La función Lectura se utiliza para leer un arreglo bidimensional entero de F filas y C columnas. */
+/* La funcion Lectura se utiliza para leer un arreglo bidimensional entero de F filas y C columnas. */
 {
     int I, J;
     for (I = 0; I < F; I++)
@@ -57,7 +57,7 @@ void Lectura(int A[][MAX], int F, int C)
 }
 
 void Suma(int M1[][MAX], int M2[][MAX], int M3[][MAX], int F, int C)
-/* La función Suma se utiliza para sumar los arreglos y almacenar el resultado en un tercer arreglo bidimensional. */
+/* La funcion Suma se utiliza para sumar los arreglos y almacenar el resultado en un tercer arreglo bidimensional. */
 {
     int I, J;
     for (I = 0; I < F; I++)
@@ -66,7 +66,7 @@ void Suma(int M1[][MAX], int M2[][MAX], int M3[][MAX], int F, int C)
 }
 
 void Imprime(int A[][MAX], int F, int C)
-/* La función Imprime se utiliza para escribir un arreglo bidimensional de tipo entero de F filas y C columnas. */
+/* La funcion Imprime se utiliza para escribir un arreglo bidimensional de tipo entero de F filas y C columnas. */
 {
     int I, J;
     for (I = 0; I < F; I++)

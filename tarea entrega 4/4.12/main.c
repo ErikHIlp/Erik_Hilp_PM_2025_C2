@@ -1,22 +1,22 @@
 #include <stdio.h>
 
-/* Máximo común divisor.
-El programa, al recibir como datos dos números enteros, calcula el máximo común divisor de dichos números. */
+/* Maximo comun divisor.
+El programa, al recibir como datos dos numeros enteros, calcula el maximo comun divisor de dichos numeros. */
 
 int mcd(int, int);
 
 int main(void)
 {
     int NU1, NU2, RES;
-    printf("\nIngresa los dos números enteros: ");
+    printf("\nIngresa los dos numeros enteros: ");
     scanf("%d %d", &NU1, &NU2);
     RES = mcd(NU1, NU2);
-    printf("\nEl máximo común divisor de %d y %d es: %d", NU1, NU2, RES);
+    printf("\nEl maximo comun divisor de %d y %d es: %d", NU1, NU2, RES);
     return 0;
 }
 
 int mcd(int N1, int N2)
-/* Esta función calcula el máximo común divisor de los números N1 y N2. */
+/* Esta funcion calcula el maximo comun divisor de los numeros N1 y N2. */
 {
     int I;
     if (N1 < N2)

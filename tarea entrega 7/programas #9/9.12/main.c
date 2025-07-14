@@ -6,7 +6,7 @@ void main(void)
 char p1;
 FILE *ar;
 ar = fopen("libro.txt", "a");
-/* Se abre el archivo con la opción para incorporar caracteres. */
+/* Se abre el archivo con la opcion para incorporar caracteres. */
 if (ar != NULL)
 {
 while ((p1 = getchar()) != '\n')

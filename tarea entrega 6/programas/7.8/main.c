@@ -2,27 +2,27 @@
 #include <string.h>
 #include <ctype.h>
 
-/* Minúsculas y mayúsculas.
+/* Minusculas y mayusculas.
 El programa, al recibir como dato un arreglo unidimensional de tipo
-cadena de caracteres, determina el número de minúsculas y mayúsculas
+cadena de caracteres, determina el numero de minusculas y mayusculas
 que hay en cada cadena. */
 
-void minymay(char *cad);    /* Prototipo de función. */
+void minymay(char *cad);    /* Prototipo de funcion. */
 
 void main(void)
 {
     int i, n;
     char FRA[20][50];
-    /* Observa cómo se declara el arreglo unidimensional de cadena de
+    /* Observa como se declara el arreglo unidimensional de cadena de
        caracteres. */
 
-    printf("\nIngrese el número de filas del arreglo: ");
+    printf("\nIngrese el numero de filas del arreglo: ");
     scanf("%d",&n);
 
     for (i=0; i<n; i++)
     {
         /* Para cada fila se lee la cadena correspondiente. */
-        printf("Ingrese la línea %d de texto: ", i+1);
+        printf("Ingrese la linea %d de texto: ", i+1);
         fflush(stdin);
         gets(FRA[i]);
     }
@@ -32,8 +32,8 @@ void main(void)
 }
 
 void minymay(char *cadena)
-/* Esta función se utiliza para calcular el número de minúsculas
-y mayúsculas que hay en cada cadena. */
+/* Esta funcion se utiliza para calcular el numero de minusculas
+y mayusculas que hay en cada cadena. */
 {
     int i = 0, mi = 0, ma = 0;
     while(cadena[i] != '\0')
@@ -45,6 +45,6 @@ y mayúsculas que hay en cada cadena. */
                 ma++;
         i++;
     }
-    printf("\nNúmero de letras minúsculas: %d", mi);
-    printf("\nNúmero de letras mayúsculas: %d", ma);
+    printf("\nNumero de letras minusculas: %d", mi);
+    printf("\nNumero de letras mayusculas: %d", ma);
 }

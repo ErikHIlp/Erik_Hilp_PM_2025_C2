@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <ctype.h>
-/* Letras minúsculas y mayúsculas.
+/* Letras minusculas y mayusculas.
 El programa, al recibir como dato un archivo formado por cadenas de
-caracteres, determina el número de letras minúsculas y mayúsculas que hay
+caracteres, determina el numero de letras minusculas y mayusculas que hay
 en el archivo. */
-void minymay(FILE *); /* Prototipo de función. */
+void minymay(FILE *); /* Prototipo de funcion. */
 void main(void)
 {
 FILE *ap;
@@ -17,8 +17,8 @@ else
 printf("No se puede abrir el archivo");
 }
 void minymay(FILE *ap1)
-/* Esta función se utiliza para leer cadenas de caracteres de un archivo
-y contar el número de letras minúsculas y mayúsculas que existen en el
+/* Esta funcion se utiliza para leer cadenas de caracteres de un archivo
+y contar el numero de letras minusculas y mayusculas que existen en el
 archivo. */
 {
 char cad[30];
@@ -26,7 +26,7 @@ int i, mi = 0, ma = 0;
 while (!feof(ap1))
 {
 fgets(cad, 30, ap1);
-/* Se utiliza la función fgets() para leer cadenas de caracteres del
+/* Se utiliza la funcion fgets() para leer cadenas de caracteres del
 archivo. */
 i = 0;
 while (cad[i] != '\0')
@@ -39,6 +39,6 @@ if (isupper(cad[i]))
 i++;
 }
 }
-printf("\n\nNúmero de letras minúsculas: %d", mi);
-printf("\nNúmero de letras mayúsculas: %d", ma);
+printf("\n\nNumero de letras minusculas: %d", mi);
+printf("\nNumero de letras mayusculas: %d", ma);
 }

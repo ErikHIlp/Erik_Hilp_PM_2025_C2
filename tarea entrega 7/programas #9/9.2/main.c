@@ -7,8 +7,8 @@ char p1;
 FILE *ar;
 if ((ar = fopen("arc.txt", "r")) != NULL) /* Se abre el archivo para lectura. */
 /* Observa que las dos instrucciones del programa 9.1 necesarias para abrir un
-archivo y verificar que éste en realidad se haya abierto, se pueden agrupar
-en una sola instrucción. */
+archivo y verificar que este en realidad se haya abierto, se pueden agrupar
+en una sola instruccion. */
 {
     while (!feof(ar))
     /* Se leen caracteres del archivo mientras no se detecte el fin del

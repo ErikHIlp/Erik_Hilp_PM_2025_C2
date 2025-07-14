@@ -2,9 +2,9 @@
 #include <math.h>
 
 /* Temperaturas.
-El programa recibe como datos 24 números reales que representan las
-temperaturas en el exterior en un período de 24 horas. Calcula el
-promedio del día y las temperaturas máxima y mínima con la hora en que
+El programa recibe como datos 24 numeros reales que representan las
+temperaturas en el exterior en un periodo de 24 horas. Calcula el
+promedio del dia y las temperaturas maxima y minima con la hora en que
 se registraron. */
 
 void Acutem(float);
@@ -18,12 +18,12 @@ float MIN = 60.0;
 int HMAX;
 int HMIN;
 /* Variables globales. ACT se utiliza para acumular las temperaturas,
-por esa razón se inicializa en cero. MAX se utiliza para calcular la
-máxima; se inicializa en -50 para que el primer valor que se ingrese
-modifique su contenido. MIN se usa para calcular la mínima; se
+por esa razon se inicializa en cero. MAX se utiliza para calcular la
+maxima; se inicializa en -50 para que el primer valor que se ingrese
+modifique su contenido. MIN se usa para calcular la minima; se
 inicializa con un valor muy alto para que el primer valor ingresado
 modifique su contenido. HMAX y HMIN se utilizan para almacenar el
-horario en que se produjeron las temperaturas máxima y mínima,
+horario en que se produjeron las temperaturas maxima y minima,
 respectivamente. */
 
 int main(void)
@@ -35,24 +35,24 @@ int main(void)
         printf("Ingresa la temperatura de la hora %d: ", I);
         scanf("%f", &TEM);
         Acutem(TEM);
-        Maxima(TEM, I);    /* Llamada a las funciones. Paso de parámetros por valor. */
+        Maxima(TEM, I);    /* Llamada a las funciones. Paso de parametros por valor. */
         Minima(TEM, I);
     }
-    printf("\nPromedio del día: %5.2f", (ACT / 24));
-    printf("\nMáxima del día: %5.2f \tHora: %d", MAX, HMAX);
-    printf("\nMínima del día: %5.2f \tHora: %d", MIN, HMIN);
+    printf("\nPromedio del dia: %5.2f", (ACT / 24));
+    printf("\nMaxima del dia: %5.2f \tHora: %d", MAX, HMAX);
+    printf("\nMinima del dia: %5.2f \tHora: %d", MIN, HMIN);
     return 0;
 }
 
 void Acutem(float T)
-/* Esta función acumula las temperaturas en la variable global ACT
+/* Esta funcion acumula las temperaturas en la variable global ACT
    para posteriormente calcular el promedio. */
 {
     ACT += T;
 }
 
 void Maxima(float T, int H)
-/* Esta función almacena la temperatura máxima y la hora en que se
+/* Esta funcion almacena la temperatura maxima y la hora en que se
    produjo en las variables globales MAX y HMAX, respectivamente. */
 {
     if (MAX < T)
@@ -63,7 +63,7 @@ void Maxima(float T, int H)
 }
 
 void Minima(float T, int H)
-/* Esta función almacena la temperatura mínima y la hora en que se
+/* Esta funcion almacena la temperatura minima y la hora en que se
    produjo en las variables globales MIN y HMIN. */
 {
     if (MIN > T)

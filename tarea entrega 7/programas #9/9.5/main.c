@@ -6,25 +6,25 @@ void main(void)
 int i, j, n, mat;
 float cal;
 FILE *ar;
-printf("\nIngrese el número de alumnos: ");
+printf("\nIngrese el numero de alumnos: ");
 scanf("%d", &n);
-/* Se asume que el valor que ingresa el usuario está comprendido entre 1 y 35. */
+/* Se asume que el valor que ingresa el usuario esta comprendido entre 1 y 35. */
 if ((ar = fopen("arc8.txt", "w")) != NULL)
 {
-    fprintf(ar,"%d ", n); /* Se escribe el número de alumnos en el
-    ➥archivo. */
+    fprintf(ar,"%d ", n); /* Se escribe el numero de alumnos en el
+    archivo. */
     for (i=0; i<n; i++)
     {
-        printf("\nIngrese la matrícula del alumno %d: ", i+1);
+        printf("\nIngrese la matricula del alumno %d: ", i+1);
         scanf("%d", &mat);
-        fprintf(ar,"\n%d ", mat); /* Se escribe la matrícula en el
-        ➥archivo. */
+        fprintf(ar,"\n%d ", mat); /* Se escribe la matricula en el
+        archivo. */
         for (j=0; j<5; j++)
         {
-            printf("\nCalificación %d: ", j+1);
+            printf("\nCalificacion %d: ", j+1);
             scanf("%f", &cal);
             fprintf(ar,"%.2f ", cal); /* Se escriben las calificaciones en
-            ➥el archivo. */
+            el archivo. */
         }
     }
     fclose(ar);

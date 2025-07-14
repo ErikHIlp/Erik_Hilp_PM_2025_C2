@@ -6,8 +6,7 @@ la serie ULAM.
 
 NUM: variable de tipo entero. */
 
-
-void main(void)
+int main(void)
 {
     int NUM;
     printf("Ingresa el numero para calcular la serie: ");
@@ -17,16 +16,15 @@ void main(void)
         printf("\nSerie de ULAM\n");
         printf("%d \t", NUM);
         while(NUM != 1)
-            {
-                if (pow(-1, NUM) > 0)
-                     NUM = NUM /2;
-                else
-                        NUM = NUM * 3 + 1;
-                printf("%d \t", NUM);
-            }
-
+        {
+            if (pow(-1, NUM) > 0)
+                NUM = NUM / 2;
+            else
+                NUM = NUM * 3 + 1;
+            printf("%d \t", NUM);
+        }
     }
     else
-            printf("\n NUM debe ser entero positivo");
-
+        printf("\n NUM debe ser entero positivo");
+    return 0;
 }

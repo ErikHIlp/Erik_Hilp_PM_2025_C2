@@ -2,9 +2,9 @@
 
 /* Calcula longitud en forma recursiva.
 El programa calcula de manera recursiva la longitud de la cadena sin utilizar
-la función strlen. */
+la funcion strlen. */
 
-int cuenta(char *);    /* Prototipo de función. */
+int cuenta(char *);    /* Prototipo de funcion. */
 
 void main(void)
 {
@@ -17,11 +17,11 @@ void main(void)
 }
 
 int cuenta(char *cadena)
-/* Esta función calcula la longitud de la cadena en forma recursiva. Es
+/* Esta funcion calcula la longitud de la cadena en forma recursiva. Es
 importante tener conocimientos tanto de pilas como de recursividad para
-comprender la solución propuesta, aunque ésta sea muy simple. Observa que
-mientras no lleguemos al último caracter de la cadena, incrementamos la
-cuenta en uno y llamamos a la función con el siguiente caracter. */
+comprender la solucion propuesta, aunque esta sea muy simple. Observa que
+mientras no lleguemos al ultimo caracter de la cadena, incrementamos la
+cuenta en uno y llamamos a la funcion con el siguiente caracter. */
 {
     if (cadena[0] == '\0')
         return 0;

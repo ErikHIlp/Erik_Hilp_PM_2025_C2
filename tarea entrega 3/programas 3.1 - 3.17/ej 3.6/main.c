@@ -5,12 +5,11 @@ universidad, obtiene la nomina y el promedio de los salarios,
 I: variable de tipo entero.
 SAL, NOM y PRO: variable de tipo real.*/
 
-void main(void)
+int main(void)
 {
     int I = 0;
     float SAL, PRO, NOM = 0;
     printf("ingrese el salario del profesor:\t");
-    /*Observa que al menos se necesita ingresar el salario de un profesor para que no ocurra un error de ejecucion del programa*/
     scanf("%f", &SAL);
     do
     {
@@ -22,4 +21,5 @@ void main(void)
     while (SAL);
     PRO = NOM / I;
     printf("\nNomina: %.2f \t Promedio de salarios: %.2f\n", NOM, PRO);
+    return 0;
 }

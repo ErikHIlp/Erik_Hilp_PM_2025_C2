@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
-/* Estadístico.
+/* Estadistico.
 El programa, al recibir como dato un arreglo unidimensional de enteros
 que contiene calificaciones, calcula la media, la varianza, la
-desviación estándar y la moda. */
+desviacion estandar y la moda. */
 
 const int MAX = 100;
 
@@ -21,10 +21,10 @@ int main(void)
     float MED, VAR, DES;
     do
     {
-        printf("Ingrese el tamaño del arreglo: ");
+        printf("Ingrese el tamano del arreglo: ");
         scanf("%d", &TAM);
     }
-    while (TAM > MAX || TAM < 1);  /* Se verifica que el tamaño del arreglo sea correcto. */
+    while (TAM > MAX || TAM < 1);  /* Se verifica que el tamano del arreglo sea correcto. */
     Lectura(ALU, TAM);
     MED = Media(ALU, TAM);
     VAR = Varianza(ALU, TAM, MED);
@@ -35,11 +35,11 @@ int main(void)
     printf("\nVarianza: %.2f", VAR);
     printf("\nDesviacion: %.2f", DES);
     printf("\nModa: %d", MOD);
-
+    return 0;
 }
 
 void Lectura(int A[], int T)
-/* La función Lectura se utiliza para leer un arreglo unidimensional de T
+/* La funcion Lectura se utiliza para leer un arreglo unidimensional de T
    elementos de tipo entero. */
 {
     int I;
@@ -51,7 +51,7 @@ void Lectura(int A[], int T)
 }
 
 float Media(int A[], int T)
-/* Esta función se utiliza para calcular la media. */
+/* Esta funcion se utiliza para calcular la media. */
 {
     int I;
     float SUM = 0.0f;
@@ -61,7 +61,7 @@ float Media(int A[], int T)
 }
 
 float Varianza(int A[], int T, float M)
-/* Esta función se utiliza para calcular la varianza. */
+/* Esta funcion se utiliza para calcular la varianza. */
 {
     int I;
     float SUM = 0.0;
@@ -71,13 +71,13 @@ float Varianza(int A[], int T, float M)
 }
 
 float Desviacion(float V)
-/* Esta función se utiliza para calcular la desviación estándar. */
+/* Esta funcion se utiliza para calcular la desviacion estandar. */
 {
     return (sqrtf(V));
 }
 
 void Frecuencia(int A[], int P, int B[])
-/* Esta función se utiliza para calcular la frecuencia de calificaciones. */
+/* Esta funcion se utiliza para calcular la frecuencia de calificaciones. */
 {
     int I;
     for (I = 0; I < P; I++)
@@ -86,7 +86,7 @@ void Frecuencia(int A[], int P, int B[])
 }
 
 int Moda(int A[], int T)
-/* Esta función se utiliza para calcular la moda. */
+/* Esta funcion se utiliza para calcular la moda. */
 {
     int I, MOD = 0, VAL = A[0];
     for (I = 1; I < T; I++)

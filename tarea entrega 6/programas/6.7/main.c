@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-/* Fábrica de lácteos.
+/* Fabrica de lacteos.
 El programa, al recibir como datos las ventas mensuales de diferentes
-productos, obtiene información estadística valiosa para la empresa. */
+productos, obtiene informacion estadistica valiosa para la empresa. */
 
 void Lectura1(int [15][12]);
 void Lectura2(float *, int);
@@ -12,7 +12,7 @@ void Funcion3(float *, int);
 
 void main(void)
 {
-    int FAB[15][12] = {0};        /* Inicialización en 0 del arreglo FAB. */
+    int FAB[15][12] = {0};        /* Inicializacion en 0 del arreglo FAB. */
     float COS[15], VEN[15];
     Lectura1(FAB);
     Lectura2(COS, 15);
@@ -22,9 +22,9 @@ void main(void)
 }
 
 void Lectura1(int A[][12])
-/* Esta función se utiliza para almacenar en el arreglo bidimensional las
+/* Esta funcion se utiliza para almacenar en el arreglo bidimensional las
 diferentes transacciones que representan las ventas de los diferentes
-productos. El fin de datos está dado por -1. */
+productos. El fin de datos esta dado por -1. */
 {
     int MES, PRO, CAN;
     printf("\nIngrese mes, tipo de producto y cantidad vendida: ");
@@ -38,7 +38,7 @@ productos. El fin de datos está dado por -1. */
 }
 
 void Lectura2(float A[], int N)
-/* Esta función se utiliza para leer los precios de venta de los diferentes
+/* Esta funcion se utiliza para leer los precios de venta de los diferentes
 productos. */
 {
     int I;
@@ -50,9 +50,9 @@ productos. */
 }
 
 void Funcion1(int A[][12], int F, int C, float V1[], float V2[])
-/* Esta función se utiliza para calcular el monto de venta anual de cada uno
+/* Esta funcion se utiliza para calcular el monto de venta anual de cada uno
 de los productos. Observa que el resultado se almacena en un arreglo
-unidimensional que se utilizará posteriormente. */
+unidimensional que se utilizara posteriormente. */
 {
     int I, J;
     float SUM;
@@ -68,17 +68,17 @@ unidimensional que se utilizará posteriormente. */
 }
 
 void Funcion2(float A[], int C)
-/* Esta función se utiliza para calcular el monto total de ventas de la fábrica. */
+/* Esta funcion se utiliza para calcular el monto total de ventas de la fabrica. */
 {
     int I;
     float SUM = 0.0;
     for (I = 0; I < C; I++)
         SUM += A[I];
-    printf("\n\nTotal de ventas de la fábrica: %.2f", SUM);
+    printf("\n\nTotal de ventas de la fabrica: %.2f", SUM);
 }
 
 void Funcion3(float A[], int C)
-/* Esta función se utiliza para obtener el tipo de producto que más se ha vendido
+/* Esta funcion se utiliza para obtener el tipo de producto que mas se ha vendido
 y el monto de las ventas de dicho producto. */
 {
     int I, TPR = 0;
@@ -89,5 +89,5 @@ y el monto de las ventas de dicho producto. */
             TPR = I;
             VEN = A[I];
         }
-    printf("\n\nTipo de Producto más vendido: %d \t Ventas: %.2f", TPR+1, VEN);
+    printf("\n\nTipo de Producto mas vendido: %d \t Ventas: %.2f", TPR+1, VEN);
 }

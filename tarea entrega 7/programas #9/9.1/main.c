@@ -10,7 +10,7 @@ if (ar != NULL)
 {
 while ((p1=getchar()) != '\n')
 /* Se escriben caracteres en el archivo mientras no se detecte el caracter
-que indica el fin de la línea. */
+que indica el fin de la linea. */
 fputc(p1, ar);
 fclose(ar); /* Se cierra el archivo. */
 }

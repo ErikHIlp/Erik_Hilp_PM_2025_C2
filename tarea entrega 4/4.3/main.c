@@ -2,19 +2,20 @@
 
 /* Conflicto de variables con el mismo nombre. */
 
-void f1(void);        /* Prototipo de función. */
+void f1(void);        /* Prototipo de funcion. */
 int K = 5;            /* Variable global. */
 
-void main (void)
+int main(void)
 {
     int I;
     for (I = 1; I <= 3; I++)
         f1();
+    return 0;
 }
 
 void f1(void)
 {
-    /* La función utiliza tanto la variable local I como la variable global I. */
+    /* La funcion utiliza tanto la variable local I como la variable global I. */
     {
         int Kl = 2;     /* Variable local. */
         Kl += Kl;

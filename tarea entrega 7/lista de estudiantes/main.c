@@ -105,7 +105,6 @@ void bubbleSortPorPromedio(Estudiante arr[], int n) {
     }
 }
 
-
 void limpiarBuffer() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF);
@@ -220,7 +219,7 @@ void borrarEstudiante() {
     free(lista_original);
 
     if (!encontrado) {
-        printf("No se encontró un estudiante con ID %d.\n", id_a_borrar);
+        printf("No se encontro un estudiante con ID %d.\n", id_a_borrar);
         free(lista_temporal);
         return;
     }

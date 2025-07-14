@@ -2,7 +2,7 @@
 #include <string.h>
 
 /* Escuela.
-El programa genera información estadística de los alumnos de una escuela. */
+El programa genera informacion estadistica de los alumnos de una escuela. */
 
 typedef struct
 {
@@ -23,10 +23,10 @@ void main(void)
     int TAM;
     do
     {
-        printf("Ingrese el tamaño del arreglo: ");
+        printf("Ingrese el tamano del arreglo: ");
         scanf("%d", &TAM);
     }
-    while (TAM > 50 || TAM < 1);    /* Se verifica que el tamaño del arreglo sea correcto. */
+    while (TAM > 50 || TAM < 1);    /* Se verifica que el tamano del arreglo sea correcto. */
     Lectura(ARRE, TAM);
     F1(ARRE, TAM);
     F2(ARRE, TAM);
@@ -34,34 +34,34 @@ void main(void)
 }
 
 void Lectura(alumno A[], int T)
-/* La función Lectura se utiliza para leer un arreglo unidimensional de tipo
+/* La funcion Lectura se utiliza para leer un arreglo unidimensional de tipo
    estructura alumno de T elementos. */
 {
     int I, J;
     for (I=0; I<T; I++)
     {
         printf("\nIngrese los datos del alumno %d", I+1);
-        printf("\nIngrese la matrícula del alumno: ");
+        printf("\nIngrese la matricula del alumno: ");
         scanf("%d", &A[I].matricula);
         fflush(stdin);
         printf("Ingrese el nombre del alumno:");
         gets(A[I].nombre);
         for (J=0; J<5; J++)
         {
-            printf("\tIngrese la calificación %d del alumno %d: ", J+1, I+1);
+            printf("\tIngrese la calificacion %d del alumno %d: ", J+1, I+1);
             scanf("%f", &A[I].cal[J]);
         }
     }
 }
 
 void F1(alumno A[], int T)
-/* La función F1 obtiene la matrícula y el promedio de cada alumno. */
+/* La funcion F1 obtiene la matricula y el promedio de cada alumno. */
 {
     int I, J;
     float SUM, PRO;
     for (I=0; I<T; I++)
     {
-        printf("\nMatrícula del alumno: %d", A[I].matricula);
+        printf("\nMatricula del alumno: %d", A[I].matricula);
         SUM = 0.0;
         for (J=0; J<5; J++)
             SUM = SUM + A[I].cal[J];
@@ -71,18 +71,18 @@ void F1(alumno A[], int T)
 }
 
 void F2(alumno A[], int T)
-/* La función F2 obtiene las matrículas de los alumnos cuya calificación en la
+/* La funcion F2 obtiene las matriculas de los alumnos cuya calificacion en la
    tercera materia es mayor a 9. */
 {
     int I;
-    printf("\nAlumnos con calificación en la tercera materia > 9:");
+    printf("\nAlumnos con calificacion en la tercera materia > 9:");
     for (I=0; I<T; I++)
         if (A[I].cal[2] > 9)
-            printf("\nMatrícula del alumno: %d", A[I].matricula);
+            printf("\nMatricula del alumno: %d", A[I].matricula);
 }
 
 void F3(alumno A[], int T)
-/* Esta función obtiene el promedio general del grupo de la materia 4. */
+/* Esta funcion obtiene el promedio general del grupo de la materia 4. */
 {
     int I;
     float PRO, SUM = 0.0;

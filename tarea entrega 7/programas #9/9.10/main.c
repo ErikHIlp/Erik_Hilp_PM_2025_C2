@@ -1,16 +1,16 @@
 #include <stdio.h>
 /* Alumnos.
-El programa pregunta al usuario el número de registro que desea
+El programa pregunta al usuario el numero de registro que desea
 modificar, obtiene el nuevo promedio del alumno y modifica tanto el
 registro como el archivo correspondiente. */
-typedef struct /* Declaración de la estructura alumno. */
+typedef struct /* Declaracion de la estructura alumno. */
 {
     int matricula;
     char nombre[20];
     int carrera;
     float promedio;
 } alumno;
-void modifica(FILE *); /* Prototipo de función. */
+void modifica(FILE *); /* Prototipo de funcion. */
 void main(void)
 {
     FILE *ar;
@@ -23,24 +23,24 @@ void main(void)
         printf("\nEl archivo no se puede abrir");
 }
 void modifica(FILE *ap)
-/* Esta función se utiliza para modificar el promedio de un alumno. */
+/* Esta funcion se utiliza para modificar el promedio de un alumno. */
 {
     int d;
     alumno alu;
-    printf("\nIngrese el número de registro que desea modificar: ");
+    printf("\nIngrese el numero de registro que desea modificar: ");
     /* Observa que el lenguaje C almacena el primer registro en la
-    posición cero. Por lo tanto, si desea modificar el registro n,
-    debe buscarlo en la posición n-1. */
+    posicion cero. Por lo tanto, si desea modificar el registro n,
+    debe buscarlo en la posicion n-1. */
     scanf("%d", &d);
     fseek(ap, (d-1)*sizeof(alumno), 0);
-    /* Observa que la instrucción fseek tiene tres argumentos. El primero
+    /* Observa que la instruccion fseek tiene tres argumentos. El primero
     indica que el apuntador se debe posicionar al inicio del FILE.
-    El segundo señala el número de bloques que debe moverse, en términos
+    El segundo senala el numero de bloques que debe moverse, en terminos
     de bytes, para llegar al registro correspondiente. Nota que el
-    primer registro ocupa la posición 0. Finalmente, el tercer argumento
-    muestra a partir de qué posición se debe mover el bloque de bytes:
+    primer registro ocupa la posicion 0. Finalmente, el tercer argumento
+    muestra a partir de que posicion se debe mover el bloque de bytes:
     se utiliza el 0 para indicar el inicio del archivo, 1 para expresar
-    que se debe mover a partir de la posición en la que actualmente se
+    que se debe mover a partir de la posicion en la que actualmente se
     encuentra y 2 para indicar que el movimiento es a partir del fin del
     archivo. */
     fread(&alu, sizeof(alumno), 1, ap);
@@ -52,7 +52,7 @@ void modifica(FILE *ap)
     fseek(ap, (d-1)*sizeof(alumno), 0);
     /* Nos tenemos que posicionar nuevamente en el lugar correcto para
     escribir el registro modificado. Observe que si no hacemos este
-    reposicionamiento, escribiríamos el registro actualizado en la
-    siguiente posición. */
+    reposicionamiento, escribiriamos el registro actualizado en la
+    siguiente posicion. */
     fwrite(&alu, sizeof(alumno), 1, ap);
 }

@@ -7,10 +7,10 @@ void main(void)
     int res;
     FILE *ar;
     if ((ar = fopen("arc.txt", "w")) != NULL)
-    /* Se abre el archivo para escritura. En la misma instrucción se verifica si se
-    ➥pudo abrir. */
+    /* Se abre el archivo para escritura. En la misma instruccion se verifica si se
+    pudo abrir. */
     {
-        printf("\n¿Desea ingresar una cadena de caracteres? Sí-1 No-0:");
+        printf("\nDesea ingresar una cadena de caracteres? Si-1 No-0:");
         scanf("%d", &res);
         while (res)
         {
@@ -18,16 +18,16 @@ void main(void)
             printf("Ingrese la cadena: ");
             gets(cad);
             fputs(cad, ar); /* Observa la forma como se escribe la cadena en el
-            ➥archivo.*/
-            printf("\n¿Desea ingresar otra cadena de caracteres? Sí-1 No-0:");
+            archivo.*/
+            printf("\nDesea ingresar otra cadena de caracteres? Si-1 No-0:");
             scanf("%d", &res);
             if (res)
                 fputs("\n", ar);
-            /* Se indica un salto de línea, excepto en la última cadena. Si no
-            ➥se hiciera esta indicación, la función fputs pegaría las cadenas y
-            ➥luego tendríamos dificultades en el momento de leerlas. Por otra
-            ➥parte, si realizáramos este salto de línea al final de la última
-            ➥cadena, en la escritura se repetiría la última cadena. */
+            /* Se indica un salto de linea, excepto en la ultima cadena. Si no
+            se hiciera esta indicacion, la funcion fputs pegaria las cadenas y
+            luego tendriamos dificultades en el momento de leerlas. Por otra
+            parte, si realizaramos este salto de linea al final de la ultima
+            cadena, en la escritura se repetiria la ultima cadena. */
         }
         fclose(ar);
     }

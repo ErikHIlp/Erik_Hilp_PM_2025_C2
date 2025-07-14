@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* Funciones y parámetros. */
+/* Funciones y parametros. */
 
 int z, y;               /* Variables globales. */
 

@@ -1,10 +1,10 @@
 #include <stdio.h>
-/* Examen de admisión.
+/* Examen de admision.
 El programa, al recibir como dato un archivo de acceso directo que contiene
-información sobre los alumnos que presentaron el examen de admisión a una
-universidad, genera información importante para el Departamento de Control
+informacion sobre los alumnos que presentaron el examen de admision a una
+universidad, genera informacion importante para el Departamento de Control
 Escolar. */
-typedef struct /* Declaración de la estructura alumno. */
+typedef struct /* Declaracion de la estructura alumno. */
 {
 int clave;
 char nombre[20];
@@ -22,7 +22,7 @@ float pro;
 FILE *ap, *c1, *c2, *c3, *c4, *c5;
 ap = fopen("alu1.dat", "r");
 /* Observa que los archivos car1.dat, car2.dat, car3.dat, car4.dat y car5.dat
-➥se abren en la modalidad para escribir y leer. */
+se abren en la modalidad para escribir y leer. */
 c1 = fopen("car1.dat", "w+");
 c2 = fopen("car2.dat", "w+");
 c3 = fopen("car3.dat", "w+");
@@ -32,7 +32,7 @@ if ((ap!=NULL) && (c1!=NULL) && (c2!=NULL) && (c3!=NULL) &&
 (c4!=NULL) && (c5!=NULL))
 {
 pro = F1(ap);
-printf("\nPROMEDIO EXAMEN DE ADMISIÓN: %.2f", pro);
+printf("\nPROMEDIO EXAMEN DE ADMISION: %.2f", pro);
 F2(ap, c1, c2, c3, c4, c5);
 F3(c1, c2, c3, c4, c5);
 }
@@ -46,7 +46,7 @@ fclose(c4);
 fclose(c5);
 }
 float F1(FILE *ap)
-/* Esta función obtiene el promedio del examen de admisión. */
+/* Esta funcion obtiene el promedio del examen de admision. */
 {
 alumno alu;
 float sum = 0, pro;
@@ -62,7 +62,7 @@ pro = sum / i;
 return (pro);
 }
 void F2(FILE *ap, FILE *c1, FILE *c2, FILE *c3, FILE *c4, FILE *c5)
-/* Esta función genera un archivo de los alumnos admitidos en cada una de
+/* Esta funcion genera un archivo de los alumnos admitidos en cada una de
 las carreras de la universidad. */
 {
 alumno alu;
@@ -71,8 +71,8 @@ fread(&alu, sizeof(alumno), 1, ap);
 while (!feof(ap))
 {
 /* Se analiza si el candidato es admitido a la universidad. */
-if (((alu.examen >= 1300) && (alu.promedio >= 8)) /**/ || ((alu.examen >=
-/*➥*/1400) &&
+if (((alu.examen >= 1300) && (alu.promedio >= 8)) || ((alu.examen >=
+1400) &&
 (alu.promedio >= 7)))
 {
 switch (alu.carrera)
@@ -93,7 +93,7 @@ fread(&alu, sizeof(alumno), 1, ap);
 }
 }
 void F3 (FILE *c1, FILE *c2, FILE *c3, FILE *c4, FILE *c5)
-/* Esta función se utiliza para obtener el promedio que consiguieron los
+/* Esta funcion se utiliza para obtener el promedio que consiguieron los
 alumnos admitidos en cada una de las carreras. */
 {
 alumno alu;
@@ -102,7 +102,7 @@ int i, j;
 i = 0;
 sum = 0;
 rewind(c1); /* Es importante posicionarse al inicio del archivo, pues
-de lo contrario se generaría un error al ejecutar el programa. */
+de lo contrario se generaria un error al ejecutar el programa. */
 fread(&alu, sizeof(alumno), 1, c1);
 while (!feof(c1))
 {

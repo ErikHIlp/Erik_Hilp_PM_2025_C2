@@ -2,9 +2,9 @@
 
 /* Cuenta caracteres.
 El programa, al recibir como datos una cadena de caracteres y un caracter,
-cuenta cuántas veces se encuentra el caracter en la cadena. */
+cuenta cuantas veces se encuentra el caracter en la cadena. */
 
-int cuenta(char *, char);    /* Prototipo de función. */
+int cuenta(char *, char);    /* Prototipo de funcion. */
 
 void main(void)
 {
@@ -20,7 +20,7 @@ printf("\n\n%c se encuentra %d veces en la cadena %s", car, res, cad);
 }
 
 int cuenta(char *cad, char car)
-/* Esta función se utiliza para obtener el número de veces que se encuentra
+/* Esta funcion se utiliza para obtener el numero de veces que se encuentra
 el caracter en la cadena. */
 {
 int i = 0, r = 0;

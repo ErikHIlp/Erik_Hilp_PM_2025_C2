@@ -15,23 +15,23 @@ void main(void)
     int FIL, COL;
     do
     {
-        printf("Ingrese el número de filas de la matriz: ");
+        printf("Ingrese el numero de filas de la matriz: ");
         scanf("%d", &FIL);
     }
-    while (FIL > MAX || FIL < 1);    /* Se verifica que el número de filas sea correcto. */
+    while (FIL > MAX || FIL < 1);    /* Se verifica que el numero de filas sea correcto. */
     do
     {
-        printf("Ingrese el número de columnas de la matriz: ");
+        printf("Ingrese el numero de columnas de la matriz: ");
         scanf("%d", &COL);
     }
-    while (COL > MAX || COL < 1);    /* Se verifica que el número de columnas sea correcto. */
+    while (COL > MAX || COL < 1);    /* Se verifica que el numero de columnas sea correcto. */
     Lectura(MAT, FIL, COL);
     Traspuesta(MAT, TRA, FIL, COL);
     Imprime(TRA, COL, FIL);
 }
 
 void Lectura(int A[][MAX], int F, int C)
-/* Esta función se utiliza para una matriz de tipo entero de F filas y C
+/* Esta funcion se utiliza para una matriz de tipo entero de F filas y C
 columnas. */
 {
     int I, J;
@@ -44,7 +44,7 @@ columnas. */
 }
 
 void Traspuesta(int M1[][MAX], int M2[][MAX], int F, int C)
-/* Esta función se utiliza para calcular la traspuesta. */
+/* Esta funcion se utiliza para calcular la traspuesta. */
 {
     int I, J;
     for (I = 0; I < F; I++)
@@ -53,8 +53,8 @@ void Traspuesta(int M1[][MAX], int M2[][MAX], int F, int C)
 }
 
 void Imprime(int A[][MAX], int F, int C)
-/* Esta función se utiliza para escribir una matriz de tipo entero de F filas
-➥y C columnas – en este caso la traspuesta. */
+/* Esta funcion se utiliza para escribir una matriz de tipo entero de F filas
+y C columnas – en este caso la traspuesta. */
 {
     int I, J;
     for (I = 0; I < F; I++)

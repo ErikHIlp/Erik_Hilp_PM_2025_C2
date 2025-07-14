@@ -1,8 +1,8 @@
 #include <stdio.h>
 /* Mezcla.
 El programa mezcla, respetando el orden, dos archivos que se encuentran
-ordenados en forma ascendente considerando la matrícula de los alumnos. */
-void mezcla(FILE *, FILE *, FILE *); /* Prototipo de función. */
+ordenados en forma ascendente considerando la matricula de los alumnos. */
+void mezcla(FILE *, FILE *, FILE *); /* Prototipo de funcion. */
 
 void main(void)
 {
@@ -22,24 +22,24 @@ void main(void)
 }
 
 void mezcla(FILE *ar, FILE *ar1, FILE *ar2)
-/* Esta función mezcla, respetando el orden, dos archivos que se encuentran
-ordenados en función de la matrícula. */
+/* Esta funcion mezcla, respetando el orden, dos archivos que se encuentran
+ordenados en funcion de la matricula. */
 {
     int i, mat, mat1, b = 1, b1 = 1;
     float ca[3], ca1[3], cal;
 
     while (((!feof(ar)) || !b) && ((!feof(ar1)) || !b1))
     {
-        if (b) /* Si la bandera b está encendida, se lee del archivo ar la
-        matrícula y las tres calificaciones del alumno. */
+        if (b) /* Si la bandera b esta encendida, se lee del archivo ar la
+        matricula y las tres calificaciones del alumno. */
         {
             fscanf(ar,  "%d", &mat);
             for (i = 0; i < 3; i++)
                 fscanf(ar, "%f", &ca[i]);
             b = 0;
         }
-        if (b1) /* Si la bandera b1 está encendida, se lee del archivo ar1 la
-        matrícula y las tres calificaciones del alumno. */
+        if (b1) /* Si la bandera b1 esta encendida, se lee del archivo ar1 la
+        matricula y las tres calificaciones del alumno. */
         {
             fscanf(ar1,  "%d", &mat1);
             for (i = 0; i < 3; i++)

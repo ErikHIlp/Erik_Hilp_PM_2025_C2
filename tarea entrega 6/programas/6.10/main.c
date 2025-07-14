@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-/* Cuadrado mágico.
-El programa genera un cuadrado mágico siguiendo los criterios enunciados
+/* Cuadrado magico.
+El programa genera un cuadrado magico siguiendo los criterios enunciados
 anteriormente. */
 
 #define MAX 50
@@ -14,17 +14,17 @@ void main(void)
     int CMA[MAX][MAX] = {0}, TAM;
     do
     {
-        printf("Ingrese el tamaño impar de la matriz: ");
+        printf("Ingrese el tamano impar de la matriz: ");
         scanf("%d", &TAM);
     }
     while (TAM > MAX || TAM < 1 || TAM % 2 == 0);
-    /* Se verifica el tamaño del arreglo y el orden (impar) del mismo. */
+    /* Se verifica el tamano del arreglo y el orden (impar) del mismo. */
     Cuadrado(CMA, TAM);
     Imprime(CMA, TAM);
 }
 
 void Cuadrado(int A[][MAX], int N)
-/* Esta función se utiliza para formar el cuadrado mágico. */
+/* Esta funcion se utiliza para formar el cuadrado magico. */
 {
     int I = 1, FIL = 0, COL = N / 2, NUM = N * N;
     while (I <= NUM)
@@ -42,7 +42,7 @@ void Cuadrado(int A[][MAX], int N)
 }
 
 void Imprime(int A[][MAX], int N)
-/* Esta función se utiliza para escribir el cuadrado mágico. */
+/* Esta funcion se utiliza para escribir el cuadrado magico. */
 {
     int I, J;
     for (I = 0; I < N; I++)

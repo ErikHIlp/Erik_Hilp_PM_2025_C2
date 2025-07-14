@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <string.h>
-/* Bienes raíces.
-El programa maneja información sobre las propiedades que tiene una empresa
-de bienes raíces de la ciudad de Lima, Perú, tanto para venta como para
+/* Bienes raices.
+El programa maneja informacion sobre las propiedades que tiene una empresa
+de bienes raices de la ciudad de Lima, Peru, tanto para venta como para
 renta. */
-typedef struct /* Declaración de la estructura ubicación.*/
+typedef struct /* Declaracion de la estructura ubicacion.*/
 {
     char zona[20];
     char calle[20];
     char colo[20]; /* Colonia. */
 } ubicacion;
-typedef struct /* Declaración de la estructura propiedades.*/
+typedef struct /* Declaracion de la estructura propiedades.*/
 {
     char clave[5];
     float scu; /* Superficie cubierta. */
     float ste; /* Superficie terreno. */
-    char car[50]; /* Características. */
-    ubicacion ubi; /* Observa que este campo es de tipo estructura ubicación. */
+    char car[50]; /* Caracteristicas. */
+    ubicacion ubi; /* Observa que este campo es de tipo estructura ubicacion. */
     float precio;
     char dispo; /* Disponibilidad. */
 } propiedades;
@@ -30,18 +30,18 @@ void main(void)
     int TAM;
     do
     {
-        printf("Ingrese el número de propiedades: ");
+        printf("Ingrese el numero de propiedades: ");
         scanf("%d", &TAM);
     }
     while (TAM > 100 || TAM < 1);
-    /* Se verifica que el tamaño del arreglo sea correcto. */
+    /* Se verifica que el tamano del arreglo sea correcto. */
     Lectura(PROPIE, TAM);
     F1(PROPIE, TAM);
     F2(PROPIE, TAM);
 }
 void Lectura(propiedades A[], int T)
-/* Esta función se utiliza para leer un arreglo unidimensional de tipo estructura
-➥propiedades de T elementos. */
+/* Esta funcion se utiliza para leer un arreglo unidimensional de tipo estructura
+propiedades de T elementos. */
 {
     int I;
     for (I=0; I<T; I++)
@@ -54,7 +54,7 @@ void Lectura(propiedades A[], int T)
         scanf("%f", &A[I].scu);
         printf("Superficie terreno: ");
         scanf("%f", &A[I].ste);
-        printf("Características: ");
+        printf("Caracteristicas: ");
         fflush(stdin);
         gets(A[I].car);
         printf("\tZona: ");
@@ -73,7 +73,7 @@ void Lectura(propiedades A[], int T)
     }
 }
 void F1(propiedades A[], int T)
-/* Esta función se utiliza para generar un listado de las propiedades
+/* Esta funcion se utiliza para generar un listado de las propiedades
 disponibles para venta en la zona de Miraflores, cuyo valor oscila entre
 450,000 y 650,000 nuevos soles. */
 {
@@ -87,7 +87,7 @@ disponibles para venta en la zona de Miraflores, cuyo valor oscila entre
                 puts(A[I].clave);
                 printf("\nSuperficie cubierta: %f", A[I].scu);
                 printf("\nSuperficie terreno: %f", A[I].ste);
-                printf("\nCaracterísticas: ");
+                printf("\nCaracteristicas: ");
                 puts(A[I].car);
                 printf("Calle: ");
                 puts(A[I].ubi.calle);
@@ -97,20 +97,20 @@ disponibles para venta en la zona de Miraflores, cuyo valor oscila entre
             }
 }
 void F2(propiedades A[], int T)
-/* Al recibir como datos una zona geográfica de Lima, Perú, y un cierto rango
-➥respecto al monto, esta función genera un listado de todas las propiedades
-➥disponibles para renta. */
+/* Al recibir como datos una zona geografica de Lima, Peru, y un cierto rango
+respecto al monto, esta funcion genera un listado de todas las propiedades
+disponibles para renta. */
 {
     int I;
     float li, ls;
     char zon[20];
     printf("\n\t\tListado de Propiedades para Renta");
-    printf("\nIngrese zona geográfica: ");
+    printf("\nIngrese zona geografica: ");
     fflush(stdin);
     gets(zon);
-    printf("\nIngrese el límite inferior del precio:");
+    printf("\nIngrese el limite inferior del precio:");
     scanf("%f", &li);
-    printf("\nIngrese el límite superior del precio:");
+    printf("\nIngrese el limite superior del precio:");
     scanf("%f", &ls);
     for (I=0; I<T; I++)
         if ((A[I].dispo == 'R') && (strcmp(A[I].ubi.zona, zon) == 0))
@@ -120,7 +120,7 @@ void F2(propiedades A[], int T)
                 puts(A[I].clave);
                 printf("\nSuperficie cubierta: %f", A[I].scu);
                 printf("\nSuperficie terreno: %f", A[I].ste);
-                printf("\nCaracterísticas: ");
+                printf("\nCaracteristicas: ");
                 puts(A[I].car);
                 printf("Calle: ");
                 puts(A[I].ubi.calle);

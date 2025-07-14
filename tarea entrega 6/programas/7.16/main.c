@@ -2,7 +2,7 @@
 #include <string.h>
 
 /* Cuenta cadenas.
-El programa, al recibir dos cadenas de caracteres, calcula e imprime cuántas
+El programa, al recibir dos cadenas de caracteres, calcula e imprime cuantas
 veces se encuentra la segunda cadena en la primera. */
 
 void main(void)
@@ -22,7 +22,7 @@ while (cad0 != NULL)
     i++;
     cad0 = strstr(cad0 + 1, cad2);
     /* Se modifica nuevamente la cadena, moviendo el apuntador una
-    ➥posición. */
+    posicion. */
 }
-printf("\nEl número de veces que aparece la segunda cadena es: %d", i);
+printf("\nEl numero de veces que aparece la segunda cadena es: %d", i);
 }

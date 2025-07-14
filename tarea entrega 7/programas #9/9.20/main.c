@@ -1,14 +1,14 @@
 #include <stdio.h>
 /* Escuela.
 El programa, al recibir como dato un archivo de acceso directo que contiene
-➥información de los alumnos de una escuela, genera información estadística
-➥importante. */
-typedef struct /* Declaración de la estructura matcal. */
+informacion de los alumnos de una escuela, genera informacion estadistica
+importante. */
+typedef struct /* Declaracion de la estructura matcal. */
 {
     char materia[20];
     int calificacion;
 } matcal;
-typedef struct /* Declaración de la estructura alumno. */
+typedef struct /* Declaracion de la estructura alumno. */
 {
     int matricula;
     char nombre[20];
@@ -34,16 +34,16 @@ void main(void)
         printf("\nEl archivo no se puede abrir");
 }
 void F1(FILE *ap)
-/* La función escribe la matrícula y el promedio general de cada alumno. */
+/* La funcion escribe la matricula y el promedio general de cada alumno. */
 {
     alumno alu;
     int j;
     float sum, pro;
-    printf("\nMATRÍCULA y PROMEDIOS");
+    printf("\nMATRICULA y PROMEDIOS");
     fread(&alu, sizeof(alumno), 1, ap);
     while (!feof(ap))
     {
-        printf("\nMatrícula: %d", alu.matricula);
+        printf("\nMatricula: %d", alu.matricula);
         sum = 0.0;
         for (j = 0; j < 5; j++)
             sum += alu.cal[j].calificacion;
@@ -53,22 +53,22 @@ void F1(FILE *ap)
     }
 }
 void F2(FILE *ap)
-/* La función escribe la matrícula de los alumnos cuya calificación en la
-➥tercera materia es mayor a 9. */
+/* La funcion escribe la matricula de los alumnos cuya calificacion en la
+tercera materia es mayor a 9. */
 {
     alumno alu;
     rewind(ap);
-    printf("\n\nALUMNOS CON CALIFICACIÓN > 9 EN MATERIA 3");
+    printf("\n\nALUMNOS CON CALIFICACION > 9 EN MATERIA 3");
     fread(&alu, sizeof(alumno), 1, ap);
     while (!feof(ap))
     {
         if (alu.cal[2].calificacion > 9)
-            printf("\nMatrícula del alumno: %d", alu.matricula);
+            printf("\nMatricula del alumno: %d", alu.matricula);
         fread(&alu, sizeof(alumno), 1, ap);
     }
 }
 float F3(FILE *ap)
-/* Esta función obtiene el promedio general de la materia 4. */
+/* Esta funcion obtiene el promedio general de la materia 4. */
 {
     alumno alu;
     int i = 0;

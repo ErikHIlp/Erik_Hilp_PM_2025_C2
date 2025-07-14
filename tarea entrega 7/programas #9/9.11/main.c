@@ -2,9 +2,9 @@
 
 /* Incrementa salarios.
 El programa incrementa el salario de los empleados de una empresa
-—actualiza el archivo correspondiente— si sus ventas son superiores
-al millón de pesos anuales. */
-typedef struct /* Declaración de la estructura empleado. */
+actualiza el archivo correspondiente si sus ventas son superiores
+al millon de pesos anuales. */
+typedef struct /* Declaracion de la estructura empleado. */
 {
 int clave;
 int departamento;
@@ -12,7 +12,7 @@ float salario;
 float ventas[12];
 }empleado;
 
-void incrementa(FILE *); /* Prototipo de función. */
+void incrementa(FILE *); /* Prototipo de funcion. */
 
 void main(void)
 {
@@ -24,23 +24,23 @@ else
 printf("\nEl archivo no se puede abrir");
 
 rewind(ar);
-/* La función rewind se utiliza para posicionarnos en el inicio del
+/* La funcion rewind se utiliza para posicionarnos en el inicio del
 archivo cada vez que sea necesario. En este programa no tiene ninguna
-utilidad, sólo se escribió para explicar su uso. */
+utilidad, solo se escribio para explicar su uso. */
 fclose(ar);
 }
 
 void incrementa(FILE *ap)
-/* Esta función se utiliza para incrementar el salario de todos aquellos
-empleados que hayan tenido ventas anuales por más de $1,000,000.
-Actualiza además el archivo correspondiente. */
+/* Esta funcion se utiliza para incrementar el salario de todos aquellos
+empleados que hayan tenido ventas anuales por mas de $1,000,000.
+Actualiza ademas el archivo correspondiente. */
 {
 int i, j, t;
 float sum;
 empleado emple;
 
 t = sizeof(empleado);
-/* La función sizeof se utiliza para conocer el tamaño de la estructura
+/* La funcion sizeof se utiliza para conocer el tamano de la estructura
 empleado. */
 
 fread(&emple, sizeof(empleado), 1, ap); /* Se lee el primer registro
@@ -48,12 +48,12 @@ del archivo. */
 while(!feof(ap))
 {
 i = ftell(ap) / t;
-/* La función ftell se utiliza para conocer la posición de nuestro
+/* La funcion ftell se utiliza para conocer la posicion de nuestro
 apuntador en el archivo. La variable i nos proporciona en este caso
-el tamaño de todos los bloques que existen debajo de nuestra
-posición. Si conocemos el tamaño de cada bloque, entonces podemos
-obtener el número de bloques que hay exactamente debajo de nuestra
-posición. */
+el tamano de todos los bloques que existen debajo de nuestra
+posicion. Si conocemos el tamano de cada bloque, entonces podemos
+obtener el numero de bloques que hay exactamente debajo de nuestra
+posicion. */
 
 sum = 0;
 for (j=0; j<12; j++)
@@ -70,7 +70,7 @@ fseek(ap, (i-1)*sizeof(empleado), 0);
 fwrite(&emple, sizeof(empleado), 1, ap);
 fseek(ap, i*sizeof(empleado), 0);
 /* Nos posicionamos nuevamente para leer el siguiente registro.
-Esta instrucción no debería ser necesaria, pero la función
+Esta instruccion no deberia ser necesaria, pero la funcion
 fwrite se comporta a veces de manera inestable en algunos
 compiladores de C. Para asegurarnos que siempre funcione
 correctamente, realizamos este nuevo reposicionamiento. */

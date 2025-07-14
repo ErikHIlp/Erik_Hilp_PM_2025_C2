@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /* Alumnos.
-El programa, al recibir un arreglo bidimensional que contiene información
+El programa, al recibir un arreglo bidimensional que contiene informacion
 sobre calificaciones de alumnos en cuatro materias diferentes, obtiene
-resultados estadísticos. */
+resultados estadisticos. */
 
 const int MAX = 50;
 const int EXA = 4;
@@ -18,9 +18,9 @@ void main(void)
     float ALU[MAX][EXA];
     do
     {
-        printf("Ingrese el número de alumnos del grupo: ");
+        printf("Ingrese el numero de alumnos del grupo: ");
         scanf("%d", &NAL);
-        /* Se verifica que el número de alumnos del grupo sea válido. */
+        /* Se verifica que el numero de alumnos del grupo sea valido. */
     }
     while (NAL > MAX || NAL < 1);
     Lectura(ALU, NAL);
@@ -29,20 +29,20 @@ void main(void)
 }
 
 void Lectura(float A[][EXA], int N)
-/* La función Lectura se utiliza para leer un arreglo bidimensional de tipo
+/* La funcion Lectura se utiliza para leer un arreglo bidimensional de tipo
    real de N filas y EXA columnas. */
 {
     int I, J;
     for (I = 0; I < N; I++)
         for (J = 0; J < EXA; J++)
         {
-            printf("Ingrese la calificación %d del alumno %d: ", J+1, I+1);
+            printf("Ingrese la calificacion %d del alumno %d: ", J+1, I+1);
             scanf("%f", &A[I][J]);
         }
 }
 
 void Funcion1(float A[][EXA], int T)
-/* Esta función se utiliza para obtener el promedio de cada estudiante. */
+/* Esta funcion se utiliza para obtener el promedio de cada estudiante. */
 {
     int I, J;
     float SUM, PRO;
@@ -57,8 +57,8 @@ void Funcion1(float A[][EXA], int T)
 }
 
 void Funcion2(float A[][EXA], int T)
-/* Esta función se utiliza tanto para obtener el promedio de cada examen, así
-   como también el examen que obtuvo el promedio más alto. */
+/* Esta funcion se utiliza tanto para obtener el promedio de cada examen, asi
+   como tambien el examen que obtuvo el promedio mas alto. */
 {
     int I, J, MAY = 0;
     float SUM, PRO, MPRO = 0;

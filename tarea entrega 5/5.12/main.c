@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/* Ordenación por inserción directa. */
+/* Ordenacion por insercion directa. */
 
 const int MAX = 100;
 
@@ -13,10 +13,10 @@ int main(void)
     int TAM, VEC[MAX];
     do
     {
-        printf("Ingrese el tamaño del arreglo: ");
+        printf("Ingrese el tamano del arreglo: ");
         scanf("%d", &TAM);
     }
-    while (TAM > MAX || TAM < 1);   /* Se verifica que el tamaño del arreglo sea correcto. */
+    while (TAM > MAX || TAM < 1);   /* Se verifica que el tamano del arreglo sea correcto. */
     Lectura(VEC, TAM);
     Ordena(VEC, TAM);
     Imprime(VEC, TAM);
@@ -24,7 +24,7 @@ int main(void)
 }
 
 void Lectura(int A[], int T)
-/* La función Lectura se utiliza para leer un arreglo unidimensional de T
+/* La funcion Lectura se utiliza para leer un arreglo unidimensional de T
    elementos de tipo entero. */
 {
     int I;
@@ -36,7 +36,7 @@ void Lectura(int A[], int T)
 }
 
 void Imprime(int A[], int T)
-/* Esta función se utiliza para escribir un arreglo unidimensional ordenado
+/* Esta funcion se utiliza para escribir un arreglo unidimensional ordenado
    de T elementos de tipo entero. */
 {
     int I;
@@ -45,14 +45,14 @@ void Imprime(int A[], int T)
 }
 
 void Ordena(int A[], int T)
-/* La función Ordena utiliza el método de inserción directa para ordenar
+/* La funcion Ordena utiliza el metodo de insercion directa para ordenar
    los elementos del arreglo unidimensional A. */
 {
     int AUX, L, I;
     for (I = 1; I < T; I++)
     {
         AUX = A[I];
-        L   = I - 1;
+        L = I - 1;
         while (L >= 0 && (AUX < A[L]))
         {
             A[L + 1] = A[L];

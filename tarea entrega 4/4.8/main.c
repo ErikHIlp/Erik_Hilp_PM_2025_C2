@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-/* Combinación de variables globales y locales, y parámetros por valor
+/* Combinacion de variables globales y locales, y parametros por valor
    y por referencia. */
 
 int a, b, c, d;           /* Variables globales. */
 
 void funcion1(int *, int *);
-/* Prototipo de función. Observa que los dos parámetros son por referencia. */
+/* Prototipo de funcion. Observa que los dos parametros son por referencia. */
 
 int funcion2(int, int *);
-/* En este prototipo el primer parámetro es por valor y el segundo por referencia. */
+/* En este prototipo el primer parametro es por valor y el segundo por referencia. */
 
 int main(void)
 {

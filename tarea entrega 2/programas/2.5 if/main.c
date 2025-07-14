@@ -3,8 +3,8 @@
 
 int main(void)
 {
-int OP, T;
-float RES;
+    int OP, T;
+    float RES;
     printf("Ingrese la opcion del calculo y el valor entero: ");
     scanf("%d %d", &OP, &T);
 
@@ -14,9 +14,9 @@ float RES;
     }
     else if (OP == 2)
     {
-        RES = pow(T,T);
+        RES = pow(T, T);
     }
-    else if  (OP == 3 || OP == 4)
+    else if (OP == 3 || OP == 4)
     {
         RES = 1;
     }
@@ -25,9 +25,6 @@ float RES;
         RES = 1;
     }
 
-    printf("\nResutado: %7.2f" , RES);
-
+    printf("\nResultado: %7.2f", RES);
     return 0;
-
-
 }

@@ -2,8 +2,8 @@
 
 /* Intercambia.
 El programa intercambia las columnas de un arreglo bidimensional. Los
-elementos de la primera columna se intercambian con los de la última,
-los de la segunda con los de la penúltima, y así sucesivamente. */
+elementos de la primera columna se intercambian con los de la ultima,
+los de la segunda con los de la penultima, y asi sucesivamente. */
 
 const int MAX = 50;
 
@@ -17,23 +17,23 @@ void main(void)
     float MAT[MAX][MAX];
     do
     {
-        printf("Ingrese el número de filas: ");
+        printf("Ingrese el numero de filas: ");
         scanf("%d", &F);
     }
-    while (F > MAX || F < 1);    /* Se verifica que el número de filas sea correcto. */
+    while (F > MAX || F < 1);    /* Se verifica que el numero de filas sea correcto. */
     do
     {
-        printf("Ingrese el número de columnas: ");
+        printf("Ingrese el numero de columnas: ");
         scanf("%d", &C);
     }
-    while (C > MAX || C < 1);    /* Se verifica que el número de columnas sea correcto. */
+    while (C > MAX || C < 1);    /* Se verifica que el numero de columnas sea correcto. */
     Lectura(MAT, F, C);
     Intercambia(MAT, F, C);
     Imprime(MAT, F, C);
 }
 
 void Lectura(float A[][MAX], int F, int C)
-/* La función Lectura se utiliza para leer un arreglo bidimensional de tipo
+/* La funcion Lectura se utiliza para leer un arreglo bidimensional de tipo
    real de F filas y C columnas. */
 {
     int I, J;
@@ -46,14 +46,14 @@ void Lectura(float A[][MAX], int F, int C)
 }
 
 void Intercambia(float A[][MAX], int F, int C)
-/* Esta función se utiliza para intercambiar las columnas del arreglo
-   bidimensional. Observa que el índice correspondiente a las columnas sólo se
+/* Esta funcion se utiliza para intercambiar las columnas del arreglo
+   bidimensional. Observa que el indice correspondiente a las columnas solo se
    mueve hasta la mitad del arreglo. */
 {
     int I, J;
     float AUX;
-    /* Observa que en esta función el índice I se utiliza para las columnas, y el
-       índice J para las filas. */
+    /* Observa que en esta funcion el indice I se utiliza para las columnas, y el
+       indice J para las filas. */
     for (I = 0; I < (C / 2); I++)
         for (J = 0; J < F; J++)
         {
@@ -64,7 +64,7 @@ void Intercambia(float A[][MAX], int F, int C)
 }
 
 void Imprime(float A[][MAX], int F, int C)
-/* La función Imprime se utiliza para escribir un arreglo bidimensional de tipo
+/* La funcion Imprime se utiliza para escribir un arreglo bidimensional de tipo
    real de F filas y C columnas. */
 {
     int I, J;

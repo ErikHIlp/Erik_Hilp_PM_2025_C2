@@ -3,12 +3,12 @@
 #include <stdlib.h>
 
 /* Estructuras-3.
-El programa muestra la manera en que se declara una estructura anidada, así
+El programa muestra la manera en que se declara una estructura anidada, asi
 como la forma de acceso a los campos de las variables o apuntadores de tipo
-estructura, tanto para lectura como para escritura. Se utiliza además una
-función que recibe como parámetro un apuntador de tipo estructura. */
+estructura, tanto para lectura como para escritura. Se utiliza ademas una
+funcion que recibe como parametro un apuntador de tipo estructura. */
 
-typedef struct          /* Declaración de la estructura domicilio utilizando un typedef. */
+typedef struct          /* Declaracion de la estructura domicilio utilizando un typedef. */
 {
     char calle[20];
     int  numero;
@@ -16,7 +16,7 @@ typedef struct          /* Declaración de la estructura domicilio utilizando un 
     char localidad[20];
 } domicilio;
 
-struct empleado         /* Declaración de la estructura anidada empleado. */
+struct empleado         /* Declaracion de la estructura anidada empleado. */
 {
     char       nombre[20];
     char       departamento[20];
@@ -25,7 +25,7 @@ struct empleado         /* Declaración de la estructura anidada empleado. */
 };
 
 void Lectura(struct empleado *a)
-/* Función que permite leer los campos de un apuntador de tipo estructura empleado. */
+/* Funcion que permite leer los campos de un apuntador de tipo estructura empleado. */
 {
     printf("\nIngrese el nombre del empleado: ");
     gets(a->nombre);
@@ -35,12 +35,12 @@ void Lectura(struct empleado *a)
     printf("Ingrese el sueldo del empleado: ");
     scanf("%f", &a->sueldo);
     fflush(stdin);
-    printf("----Ingrese la dirección del empleado----");
+    printf("----Ingrese la direccion del empleado----");
     printf("\n\tCalle: ");
     gets(a->direccion.calle);
-    printf("\tNúmero: ");
+    printf("\tNumero: ");
     scanf("%d", &a->direccion.numero);
-    printf("\tCódigo Postal: ");
+    printf("\tCodigo Postal: ");
     scanf("%d", &a->direccion.cp);
     fflush(stdin);
     printf("\tLocalidad: ");
@@ -50,10 +50,10 @@ void Lectura(struct empleado *a)
 void main(void)
 {
     struct empleado e0 = {"Arturo", "Compras", 15500.75,
-                          {"San Jerónimo", 120, 3490, "Toluca"}};
+                          {"San Jeronimo", 120, 3490, "Toluca"}};
     struct empleado *e1, *e2, e3, e4;
     /* Se declaran diferentes variables y apuntadores de la estructura empleado
-       para que el lector pueda apreciar también las diferentes formas en que
+       para que el lector pueda apreciar tambien las diferentes formas en que
        los campos reciben valores. */
 
     /* En el programa principal se leen los campos de un apuntador, e1, */
@@ -66,12 +66,12 @@ void main(void)
     printf("Ingrese el sueldo del empleado: ");
     scanf("%f", &e1->sueldo);
     fflush(stdin);
-    printf("----Ingrese la dirección del empleado----");
+    printf("----Ingrese la direccion del empleado----");
     printf("\n\tCalle: ");
     gets(e1->direccion.calle);
-    printf("\tNúmero: ");
+    printf("\tNumero: ");
     scanf("%d", &e1->direccion.numero);
-    printf("\tCódigo Postal: ");
+    printf("\tCodigo Postal: ");
     scanf("%d", &e1->direccion.cp);
     fflush(stdin);
     printf("\tLocalidad: ");
@@ -85,18 +85,18 @@ void main(void)
     printf("Ingrese el sueldo del empleado: ");
     scanf("%f", &e3.sueldo);
     fflush(stdin);
-    printf("----Ingrese la dirección del empleado----");
+    printf("----Ingrese la direccion del empleado----");
     printf("\n\tCalle: ");
     gets(e3.direccion.calle);
-    printf("\tNúmero: ");
+    printf("\tNumero: ");
     scanf("%d", &e3.direccion.numero);
-    printf("\tCódigo Postal: ");
+    printf("\tCodigo Postal: ");
     scanf("%d", &e3.direccion.cp);
     fflush(stdin);
     printf("\tLocalidad: ");
     gets(e3.direccion.localidad);
 
-    /* En la función Lectura se leen los campos de un apuntador, e2, y de una variable, e4. */
+    /* En la funcion Lectura se leen los campos de un apuntador, e2, y de una variable, e4. */
     e2 = malloc(sizeof *e2);
     Lectura(e2);
     Lectura(&e4);

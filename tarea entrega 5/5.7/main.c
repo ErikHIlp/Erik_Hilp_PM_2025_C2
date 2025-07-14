@@ -8,23 +8,23 @@ repetidos. */
 void Lectura(int A[], int T);      /* Prototipos de funciones. */
 void Imprime(int A[], int T);
 void Elimina(int A[], int *T);
-/* Observa que en el prototipo de Elimina, el segundo parámetro es por
- referencia. Esto, porque el tamaño del arreglo puede disminuir. */
+/* Observa que en el prototipo de Elimina, el segundo parametro es por
+ referencia. Esto, porque el tamano del arreglo puede disminuir. */
 
 int main(void)
 {
     int TAM, ARRE[100];
-    /* Se escribe un do-while para verificar que el tamaño del arreglo que se ingresa sea correcto. */
+    /* Se escribe un do-while para verificar que el tamano del arreglo que se ingresa sea correcto. */
     do
     {
-        printf("Ingrese el tamaño del arreglo: ");
+        printf("Ingrese el tamano del arreglo: ");
         scanf("%d", &TAM);
     } while (TAM > 100 || TAM < 1);
     Lectura(ARRE, TAM);
     Elimina(ARRE, &TAM);
-    /* Observa que el tamaño del arreglo se pasa por referencia. */
+    /* Observa que el tamano del arreglo se pasa por referencia. */
     Imprime(ARRE, TAM);
-
+    return 0;
 }
 
 void Lectura(int A[], int T)
@@ -46,7 +46,7 @@ void Imprime(int A[], int T)
 }
 
 void Elimina(int A[], int *T)
-/* Esta función se utiliza para eliminar los elementos repetidos de un arreglo unidimensional de T elementos de tipo entero. */
+/* Esta funcion se utiliza para eliminar los elementos repetidos de un arreglo unidimensional de T elementos de tipo entero. */
 {
     int I = 0, K, L;
     while (I < (*T) - 1)

@@ -2,5 +2,6 @@
 
 int main(void)
 {
-printf("mi primer programa en c");
+    printf("mi primer programa en c");
+    return 0;
 }

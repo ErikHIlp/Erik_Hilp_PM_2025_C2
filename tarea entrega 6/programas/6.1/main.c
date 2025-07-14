@@ -6,10 +6,10 @@ El programa, al recibir como dato una matriz de tipo entero, escribe la
 
 const int TAM = 10;
 
-void Lectura(int A[][TAM], int);    /* Protótipo de funciones. */
+void Lectura(int A[][TAM], int);    /* Prototipo de funciones. */
 void Imprime(int A[][TAM], int);
-/* Observa que siempre es necesario declarar el número de columnas.
- Si no lo haces, el compilador marcará un error de sintaxis. */
+/* Observa que siempre es necesario declarar el numero de columnas.
+ Si no lo haces, el compilador marcara un error de sintaxis. */
 
 int main(void)
 {
@@ -20,8 +20,8 @@ int main(void)
 }
 
 void Lectura(int A[][TAM], int F)
-/* La función Lectura se utiliza para leer un arreglo bidimensional. Observa
- que sólo se debe pasar como parámetro el número de filas ya que la matriz
+/* La funcion Lectura se utiliza para leer un arreglo bidimensional. Observa
+ que solo se debe pasar como parametro el numero de filas ya que la matriz
   es cuadrada. */
 {
     int I, J;
@@ -34,7 +34,7 @@ void Lectura(int A[][TAM], int F)
 }
 
 void Imprime(int A[][TAM], int F)
-/* La función Imprime se utiliza para escribir un arreglo bidimensional cuadrado de F filas y columnas. */
+/* La funcion Imprime se utiliza para escribir un arreglo bidimensional cuadrado de F filas y columnas. */
 {
     int I, J;
     for (I = 0; I < F; I++)
