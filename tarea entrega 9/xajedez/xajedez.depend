@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1753393653 source:c:\clases\programacion\tarea 9\tarea 9\xajedez\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	<conio.h>
+	<windows.h>
+	<termios.h>
+	<unistd.h>
+
